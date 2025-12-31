@@ -1,4 +1,4 @@
-# MedAlert+ 💊
+# MedAlert+ 
 
 MedAlert+ is a full-stack medication reminder web application that helps users
 manage medicines, receive reminders, and track medication history.
