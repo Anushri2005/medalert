@@ -63,28 +63,28 @@ medalert/
 ## ⚙️ How to Run Locally
 
 ### 1️⃣ Clone the repository
-git clone https://github.com/<your-username>/medalert.git
-cd medalert
+- git clone https://github.com/<your-username>/medalert.git
+- cd medalert
 
 2️⃣ Backend setup
-cd backend
-npm install
-Create a .env file in backend/:
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+- cd backend
+- npm install
+- Create a .env file in backend/:
+- PORT=5000
+- MONGO_URI=your_mongodb_connection_string
+- JWT_SECRET=your_secret_key
 
 Start backend:
-node server.js
+- node server.js
 
 3️⃣ Frontend setup
-Open frontend folder in VS Code
-Right-click login.html → Open with Live Server
+- Open frontend folder in VS Code
+- Right-click login.html → Open with Live Server
 
 🔐 Security
-Passwords are hashed using bcrypt
-JWT used for authentication
-.env file is excluded from GitHub
+- Passwords are hashed using bcrypt
+- JWT used for authentication
+- .env file is excluded from GitHub
 
 
 
