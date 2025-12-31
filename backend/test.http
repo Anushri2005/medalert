@@ -1,0 +1,31 @@
+### Signup user
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "testuser@gmail.com",
+  "password": "123456"
+}
+### Login user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@gmail.com",
+  "password": "123456"
+}
+
+### Add medicine (protected)
+POST http://localhost:5000/api/meds
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTUzYzhiMTk0MWFmZGM5MjdhZGE2ZTMiLCJpYXQiOjE3NjcxMDYyMDUsImV4cCI6MTc2NzcxMTAwNX0.V_5Z3JQ4c1e_yxVpt3ExwprwHDb7NRP8z53B8Yl3aPc
+
+{
+  "name": "Paracetamol",
+  "time": "08:00",
+  "frequency": "Daily"
+}
+### Get medicines (protected)
+GET http://localhost:5000/api/meds
+Authorization: Bearer PASTE_YOUR_TOKEN_HERE

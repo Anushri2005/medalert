@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MedAlert+ — Medication Reminder</title>  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("ByiiFKGaYAOIG3A_-");
+  })();
+</script>
+<body>
+  <header class="top-bar">
+  <h1>MedAlert+</h1>
+  <button id="logoutBtn" class="small logout-btn">Logout</button>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <button id="openAddBtn" class="btn primary">+ Add New Medicine</button>
+      <button id="exportBtn" class="btn">Export Data</button>
+      <button id="importBtn" class="btn">Import Data</button>
+      <input id="importFile" type="file" accept=".json" style="display:none" />
+    </section>
+
+    <section class="schedule">
+      <h2>Today's Schedule</h2>
+      <ul id="medList" class="med-list"></ul>
+    </section>
+
+    <section class="history">
+      <h2>Recent History</h2>
+      <ul id="historyList" class="history-list"></ul>
+    </section>
+  </main>
+
+  <!-- Add Medicine Modal -->
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <h3>Add Medicine</h3>
+      <form id="addForm">
+        <label>Medicine name
+          <input id="name" required type="text" placeholder="e.g., Paracetamol" />
+        </label>
+
+        <label>Dosage
+          <input id="dosage" required type="text" placeholder="e.g., 1 tablet" />
+        </label>
+
+        <label>Time
+          <input id="time" required type="time" />
+        </label>
+
+        <label>Frequency
+          <select id="frequency">
+            <option value="daily">Daily</option>
+            <option value="once">Once</option>
+            <option value="weekly">Weekly</option>
+          </select>
+        </label>
+
+        <label>Notes (optional)
+          <input id="notes" type="text" placeholder="Notes for caretaker or user" />
+        </label>
+
+        <div class="modal-actions">
+          <button type="submit" class="btn primary">Save</button>
+          <button type="button" id="closeModal" class="btn">Cancel</button>
+          <label>Caretaker Email (optional)</label>
+          <input id="caretakerEmail" type="email" placeholder="example@mail.com" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <audio id="alertSound" preload="auto">
+    <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg" />
+  </audio>
+
+  <script src="api.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
